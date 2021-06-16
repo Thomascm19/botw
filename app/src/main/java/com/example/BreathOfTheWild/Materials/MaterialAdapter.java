@@ -2,15 +2,22 @@ package com.example.BreathOfTheWild.Materials;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.BreathOfTheWild.Materials.Models.Material;
 import com.example.BreathOfTheWild.R;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class MaterialAdapter extends BaseAdapter {
@@ -50,9 +57,23 @@ public class MaterialAdapter extends BaseAdapter {
         TextView nameMaterial = v.findViewById(R.id.materialName);
         nameMaterial.setText(material.getName());
 
-        TextView materialId = v.findViewById(R.id.materialID);
-        materialId.setText(material.getMaterialId());
+        getImage(v, material);
 
         return v;
+    }
+
+    private void getImage(View v, Material material) {
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            ImageView materialImage = v.findViewById(R.id.materialImage);
+            URL url = new URL(material.getImage());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            materialImage.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

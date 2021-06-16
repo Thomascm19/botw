@@ -10,6 +10,9 @@ public class Material {
     @SerializedName("id")
     private String id;
 
+    @SerializedName("image")
+    private String image;
+
     public String getName() {
         return name;
     }
@@ -26,4 +29,11 @@ public class Material {
         this.id = id;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

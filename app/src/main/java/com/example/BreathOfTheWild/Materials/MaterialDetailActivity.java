@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.example.BreathOfTheWild.Materials.MaterialApi.MaterialRetrofitClient;
 import com.example.BreathOfTheWild.Materials.Models.Material;
+import com.example.BreathOfTheWild.Materials.Models.MaterialByID;
 import com.example.BreathOfTheWild.R;
 
 import retrofit2.Call;
@@ -27,16 +28,16 @@ public class MaterialDetailActivity extends AppCompatActivity {
     }
 
     private void getMaterialById(String id ){
-        Call<Material> call = MaterialRetrofitClient.getInstance().getMaterialService().getMaterial(id);
-        call.enqueue(new Callback<Material>() {
+        Call<MaterialByID> call = MaterialRetrofitClient.getInstance().getMaterialService().getMaterial(id);
+        call.enqueue(new Callback<MaterialByID>() {
             @Override
-            public void onResponse(Call<Material> call, Response<Material> response) {
-                Material material = response.body();
-                Toast.makeText(getApplicationContext(), material.getName(), Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<MaterialByID> call, Response<MaterialByID> response) {
+                MaterialByID material = response.body();
+                Toast.makeText(getApplicationContext(), material.getData().getName(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<Material> call, Throwable t) {
+            public void onFailure(Call<MaterialByID> call, Throwable t) {
                 Toast.makeText(getApplicationContext(), "Ocurrio un error", Toast.LENGTH_SHORT).show();
             }
         });

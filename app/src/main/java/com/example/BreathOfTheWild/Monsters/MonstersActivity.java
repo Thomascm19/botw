@@ -1,11 +1,15 @@
 package com.example.BreathOfTheWild.Monsters;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.BreathOfTheWild.Materials.MaterialDetailActivity;
 import com.example.BreathOfTheWild.R;
 import com.example.BreathOfTheWild.Monsters.MonsterApi.MonsterRetrofitClient;
 import com.example.BreathOfTheWild.Monsters.Models.Monsters;
@@ -15,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MonstersActivity extends AppCompatActivity implements View.OnClickListener {
+public class MonstersActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = "Botw";
     Monsters monsters;
@@ -27,6 +31,7 @@ public class MonstersActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_monsters);
         listMonsters = findViewById(R.id.listMonsters);
         getInfo();
+        listMonsters.setOnItemClickListener(this);
     }
 
     private void getInfo() {
@@ -50,9 +55,10 @@ public class MonstersActivity extends AppCompatActivity implements View.OnClickL
             });
     }
 
-
     @Override
-    public void onClick(View v) {
-
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent in = new Intent(this , MonsterDetailActivity.class);
+        in.putExtra("id", monsters.getMonsters().get(position).getMonsterID());
+        startActivity(in);
     }
 }

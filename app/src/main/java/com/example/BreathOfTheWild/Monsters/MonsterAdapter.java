@@ -2,15 +2,23 @@ package com.example.BreathOfTheWild.Monsters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.BreathOfTheWild.Materials.Models.Material;
 import com.example.BreathOfTheWild.R;
 import com.example.BreathOfTheWild.Monsters.Models.Monster;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class MonsterAdapter extends BaseAdapter {
@@ -50,9 +58,23 @@ public class MonsterAdapter extends BaseAdapter {
         TextView nameMonster = v.findViewById(R.id.monsterName);
         nameMonster.setText(monster.getName());
 
-        TextView monsterID = v.findViewById(R.id.monsterID);
-        monsterID.setText(monster.getMonsterID());
+        getImage(v, monster);
 
         return v;
+    }
+
+    private void getImage(View v, Monster monster) {
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            ImageView monsterImage = v.findViewById(R.id.mosnterImage);
+            URL url = new URL(monster.getImage());
+            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            monsterImage.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

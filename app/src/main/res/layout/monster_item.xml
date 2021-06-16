@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/monsterID"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mosnterImage"
         android:layout_width="62dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
@@ -28,7 +28,7 @@
         android:paddingLeft="40dp"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/monsterID"
+        app:layout_constraintStart_toEndOf="@+id/mosnterImage"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

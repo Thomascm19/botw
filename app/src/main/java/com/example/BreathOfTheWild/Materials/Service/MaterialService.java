@@ -1,6 +1,7 @@
 package com.example.BreathOfTheWild.Materials.Service;
 
 import com.example.BreathOfTheWild.Materials.Models.Material;
+import com.example.BreathOfTheWild.Materials.Models.MaterialByID;
 import com.example.BreathOfTheWild.Materials.Models.Materials;
 
 import retrofit2.Call;
@@ -14,5 +15,5 @@ public interface MaterialService {
     Call<Materials> getMaterials();
 
     @GET("entry/{id}")
-    Call<Material> getMaterial(@Path("id") String id);
+    Call<MaterialByID> getMaterial(@Path("id") String id);
 }
