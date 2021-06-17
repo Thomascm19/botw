@@ -6,4 +6,128 @@
     android:layout_height="match_parent"
     tools:context=".Monsters.MonsterDetailActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/monsterNameImageDetail"
+        android:layout_width="65dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/monsterLocationsDetail"
+        android:layout_width="196dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toEndOf="@+id/monsterLocationsTitleDetail"
+        app:layout_constraintTop_toTopOf="@+id/monsterCategoryDetail" />
+
+    <TextView
+        android:id="@+id/monsterCategoryDetail"
+        android:layout_width="193dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/monsterLocationsDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toEndOf="@+id/monsterCategoryTitleDetail"
+        app:layout_constraintTop_toBottomOf="@+id/monsterNameDetail"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <TextView
+        android:id="@+id/monsterNameDetail"
+        android:layout_width="245dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="124dp"
+        android:paddingLeft="40dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toEndOf="@+id/monsterNameImageDetail"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/monsterDescriptionDetail"
+        android:layout_width="236dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/monsterDropsDetail"
+        app:layout_constraintStart_toEndOf="@+id/monsterDescriptionTitleDetail"
+        app:layout_constraintTop_toBottomOf="@+id/monsterLocationsDetail"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/monsterDescriptionTitleDetail"
+        android:layout_width="102dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/monster_description_title_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/monsterLocationsTitleDetail" />
+
+    <TextView
+        android:id="@+id/monsterLocationsTitleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/monster_common_locations_title_detail"
+        app:layout_constraintBottom_toTopOf="@+id/monsterDescriptionTitleDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monsterCategoryTitleDetail"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <TextView
+        android:id="@+id/monsterCategoryTitleDetail"
+        android:layout_width="102dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="212dp"
+        android:text="@string/monster_category_title_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/monsterDropsDetail"
+        android:layout_width="175dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monsterDescriptionTitleDetail" />
+
+    <TextView
+        android:id="@+id/monsterTitleDetail"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/monster_title_detail"
+        app:layout_constraintBottom_toTopOf="@+id/monsterNameDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/monsterDropsTitleDetail"
+        android:layout_width="82dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="60dp"
+        android:text="@string/monster_drops_title_detail"
+        app:layout_constraintEnd_toStartOf="@+id/monsterDropsDetail"
+        app:layout_constraintTop_toBottomOf="@+id/monsterDescriptionTitleDetail" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,18 @@
     <string name="login_text_monsters">Monstruos</string>
     <string name="login_text_materials">Equipamientos</string>
     <string name="login_img">Imagen del login</string>
+
+<!--    Detalles del material-->
+    <string name="material_title_detail">Detalles del material</string>
+    <string name="material_category_title_detail">Categoria: </string>
+    <string name="material_cooking_title_detail">Efectos del plato: </string>
+    <string name="material_description_title_detail">Descripcion: </string>
+
+    <!--    Detalles del mounstro   -->
+    <string name="monster_title_detail">Detalles del montruo</string>
+    <string name="monster_category_title_detail">Categoria: </string>
+    <string name="monster_common_locations_title_detail">Localizaciones: </string>
+    <string name="monster_description_title_detail">Descripcion: </string>
+    <string name="monster_drops_title_detail">Drops: </string>
+
 </resources>
